@@ -1,0 +1,304 @@
+.hlavicka {
+    display: flex;
+    /* Flexbox pro horizontální zarovnání */
+    align-items: center;
+    /* Vertikální vyrovnání */
+    justify-content: space-between;
+    /* Logo vlevo, menu vpravo */
+    padding: 10px 10px;
+    /* Okraje kolem obsahu */
+    background-color: #ffffff;
+    /* Světlé pozadí pro hlavičku */
+    font-family: "Montserrat", sans-serif;
+    height: 60px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    border-radius: 50px;
+}
+
+#obrazek1 {
+    max-height: 60px;
+    width: 350px;
+    padding-left: 5px;
+    padding-bottom: 1px;
+}
+
+.sipka {
+    width: 10px;
+    height: auto;
+    padding-left: 5px;
+
+}
+
+.menu {
+    display: flex;
+}
+
+
+.odkazy {
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.menu .odkazy {
+    display: flex;
+    justify-content: flex-end;
+    /* Zajišťuje zarovnání doprava */
+    gap: 20px;
+    /* Mezera mezi odkazy */
+    align-items: center;
+    /* Vyrovnání vertikálně */
+}
+
+.menu {
+    display: inline;
+    max-height: 40px;
+    padding: 10px;
+}
+
+.odkazy h4 {
+    cursor: pointer;
+    margin: 0;
+    font-weight: 300;
+}
+
+.odkazy .submenu {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: none;
+}
+
+.odkazy .submenu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    transition: background-color 0.6s ease;
+}
+
+
+.odkazy div:hover .submenu {
+    display: block;
+}
+
+.odkazy>a,
+.odkazy>.Aktivity {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding: 10px;
+    background-color: #efeeff;
+    border: 1px solid #2a2a2a72;
+    border-radius: 5px;
+    transition: background-color 0.6s ease;
+}
+
+/* Кнопки с градиентом при наведении */
+.menu a:hover,
+.Aktivity:hover {
+    background: -webkit-linear-gradient(90deg, #7578ab, #818bc1, #a3a6d8);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, #7578ab, #818bc1, #a3a6d8);
+    /* Градиент для кнопок */
+    font-family: "Montserrat", sans-serif;
+}
+
+/* При наведении на элементы подменю — однотонный фон */
+.odkazy .Aktivity .submenu a:hover {
+    background-color: #dedcff;
+    /* Легкий однотонный эффект */
+}
+
+
+
+
+/* Skrytí submenu */
+.submenu {
+    text-align: left;
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Posun submenu pod rodiče */
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 10px;
+
+}
+
+.submenu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+
+.submenu a:hover {
+    background-color: #a6a3e7;
+    border-radius: 10px;
+}
+
+/* Zobrazení submenu při najetí */
+.Aktivity:hover .submenu {
+    display: block;
+}
+
+body {
+    background: -webkit-linear-gradient(90deg, #0f134f, #273270, #494c8c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, #0f134f, #273270, #494c8c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-weight: 300;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+
+/* Список seznam в три столбца с квадратами */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+        /* Подпрыгивание вверх */
+    }
+}
+
+.seznam {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Три столбца одинаковой ширины */
+    gap: 20px;
+    /* Расстояние между элементами */
+    border-radius: 30px;
+    padding: 25px;
+    margin: 15px;
+
+
+
+}
+
+.seznam h2 {
+    padding-bottom: none;
+    font-weight: 700;
+}
+
+.seznam li {
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    outline: #ffffff 10px solid;
+    background-color: #ffffff;
+    transition: background-color 1s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Анимация при наведении */
+}
+
+.seznam p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0 15px 0;
+    text-align: center;
+
+}
+
+.seznam li:hover {
+    background: -webkit-linear-gradient(90deg, #7578ab, #818bc1, #a3a6d8);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, #7578ab, #818bc1, #a3a6d8);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: "Montserrat", sans-serif;
+    transform: scale(1.05);
+    /* Увеличение карточки при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Увеличение тени при наведении */
+}
+
+/* Выравнивание текста text и изображения stroj1 */
+.text {
+    display: flex;
+    align-items: center;
+    /* Центрирование по вертикали */
+    justify-content: space-between;
+    /* Разделение текста и изображения */
+    gap: 20px;
+    /* Промежуток между текстом и изображением */
+    padding-left: 130px;
+    padding-right: 15px;
+    max-width: 1680px;
+
+
+}
+
+.textuvnitr {
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 50px;
+    margin: 25px;
+    font-size: 16px;
+}
+
+.strojjedna,
+.strojdva,
+.strojtri {
+    max-height: 300px;
+    /* Устанавливаем максимальную высоту изображения */
+    width: auto;
+    /* Сохраняем пропорции */
+    border-radius: 10px;
+    margin-right: 10px;
+
+}
+
+footer {
+    display: flex;
+    /* Включаем Flexbox */
+    justify-content: space-between;
+    /* Текст слева, картинка справа */
+    align-items: center;
+    /* Выравнивание по вертикали */
+    background-color: #ffffff;
+    /* Цвет фона */
+    padding: 20px;
+    /* Отступы внутри */
+    margin-left: 20px;
+    /* Отступ сверху от других элементов */
+    margin-right: 20px;
+    border-radius: 50px;
+    /* Закругленные углы */
+    font-size: 1rem;
+    /* Размер шрифта */
+}
+
+footer .logofooter {
+    max-height: 40px;
+    /* Максимальная высота изображения */
+    width: auto;
+    /* Сохраняем пропорции */
+    margin-left: 10px;
+    /* Небольшой отступ от текста */
+}
